@@ -1,0 +1,31 @@
+{
+  "study": "kraz_model_compatibility_20260923",
+  "scope": "Сопоставление откликов заданной модели с исходными измерениями КрАЗ",
+  "simulation_config": "../../source_comparison/configs/experiment.json",
+  "data_root": "../../../data/pm25/raw",
+  "output": "../../../../YM2026-results/kraz_alignment",
+  "amplitude_factors": [
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "fit_points": 6,
+  "minimum_fit_range": 10.0,
+  "window_hours": 3,
+  "window_selection": "Минимум нормированной суммы квадратов невязок по первым шести измерениям; при равенстве — первое окно в хронологическом порядке",
+  "splits": {
+    "exploration": [
+      "2019-01-01",
+      "2022-01-01"
+    ],
+    "later_period": [
+      "2022-01-01",
+      "2023-01-01"
+    ]
+  },
+  "experiment": "kraz",
+  "protected_roots": [
+    "../../.."
+  ]
+}

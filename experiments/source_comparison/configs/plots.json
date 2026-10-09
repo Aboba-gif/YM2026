@@ -1,0 +1,9 @@
+{
+  "experiment": "figures",
+  "simulation_config": "experiment.json",
+  "input": "../../../../YM2026-results/source_comparison",
+  "output": "../../../../YM2026-results/source_comparison_plots",
+  "protected_roots": [
+    "../../.."
+  ]
+}

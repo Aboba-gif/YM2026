@@ -1,0 +1,12 @@
+{
+  "schema": "ym2026.observation_sensitivity.config",
+  "version": 4,
+  "study": "YM2026-E06-20260927-v1",
+  "output": "../../../../YM2026-results/observation_sensitivity",
+  "baseline": {
+    "kind": "completed_run",
+    "config_path": "../../source_recovery/configs/experiment.json",
+    "run_manifest_path": "../../../../YM2026-results/source_recovery/run.json"
+  },
+  "design_sha256": "56ce94438a473d958d2363eac5ffe2a0c334cf24846a631dfc4182ba26a2778d"
+}

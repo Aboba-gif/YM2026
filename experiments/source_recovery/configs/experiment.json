@@ -1,0 +1,1117 @@
+{
+  "schema": "ym2026.research_validation.v1",
+  "frozen": true,
+  "study": "YM2026-RV-20260926-v2",
+  "output": "../../../../YM2026-results/source_recovery",
+  "source_protocol": {
+    "path": "../../source_comparison/configs/protocol.json",
+    "sha256": "b0ea2697407f905ea78334d4d1d10d74c0b0ed205845451974bc4d09830e5078"
+  },
+  "input_files": [],
+  "source_mass": 172.0876693725586,
+  "Qref": 100.0,
+  "sources": [
+    "PG10",
+    "SB150",
+    "EC04",
+    "EC06",
+    "NEW-J2",
+    "NEW-S2"
+  ],
+  "replicates": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "stream": {
+    "seed": 20260926,
+    "version": 2
+  },
+  "model": {
+    "diffusion": 0.018,
+    "velocity": [
+      -0.72,
+      -0.144
+    ],
+    "linear_loss": 0.013888888888888888,
+    "reaction_gamma": 0.013888888888888888,
+    "reaction_c_star": 1.0,
+    "source_position": [
+      0.0,
+      0.0
+    ],
+    "background": 0.0,
+    "horizon": 3.5,
+    "origin_hours": -0.5
+  },
+  "observations": {
+    "station_names": [
+      "Severny",
+      "Peschanka",
+      "Soloncy",
+      "KrAZ"
+    ],
+    "centers_km": [
+      [
+        -4.807498961147989,
+        -2.0443267416397575
+      ],
+      [
+        4.071301019331992,
+        -0.4486151101289735
+      ],
+      [
+        -10.93028096310831,
+        -2.14041318690405
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "spatial_standard_deviation_km": 1.0
+  },
+  "grids": {
+    "G0": {
+      "bounds_km": [
+        -14.0,
+        8.0,
+        -6.0,
+        6.0
+      ],
+      "spacing_km": 0.25,
+      "steps": 336
+    },
+    "Gt": {
+      "bounds_km": [
+        -14.0,
+        8.0,
+        -6.0,
+        6.0
+      ],
+      "spacing_km": 0.25,
+      "steps": 672
+    },
+    "Gx": {
+      "bounds_km": [
+        -14.0,
+        8.0,
+        -6.0,
+        6.0
+      ],
+      "spacing_km": 0.125,
+      "steps": 336
+    },
+    "Gxt": {
+      "bounds_km": [
+        -14.0,
+        8.0,
+        -6.0,
+        6.0
+      ],
+      "spacing_km": 0.125,
+      "steps": 672
+    }
+  },
+  "truth_grid": "G0",
+  "noise": {
+    "corr": {
+      "type": "station_exponential",
+      "station_sd": [
+        1.0,
+        1.5,
+        2.0,
+        1.0
+      ],
+      "ell_hours": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    },
+    "iid_high": {
+      "type": "station_iid",
+      "station_sd": [
+        1.0,
+        1.5,
+        2.0,
+        1.0
+      ]
+    },
+    "iid_low": {
+      "type": "station_iid",
+      "station_sd": [
+        0.1,
+        0.15,
+        0.2,
+        0.1
+      ]
+    }
+  },
+  "calibration": {
+    "panels": {
+      "calib_noise": 32
+    },
+    "sd_bounds": [
+      0.001,
+      100.0
+    ],
+    "ell_grid_hours": [
+      0.016666666666666666,
+      0.019183101647219845,
+      0.022079483328454125,
+      0.025413178380469886,
+      0.029250215043089015,
+      0.03366659090247694,
+      0.0387497781238549,
+      0.044600455953427466,
+      0.05133450480401703,
+      0.05908530141990925,
+      0.06800636057968454,
+      0.07827437565945439,
+      0.09009271827887906,
+      0.1036954663450847,
+      0.11935204027521747,
+      0.1373725392241544,
+      0.15811388300841894,
+      0.18198688137522764,
+      0.20946437063289192,
+      0.24109057879930182,
+      0.27749190475764435,
+      0.3193893249147924,
+      0.3676126730926433,
+      0.42311707648454255,
+      0.48700187321264815,
+      0.5605323861734821,
+      0.6451649844314756,
+      0.7425759285345603,
+      0.8546945710714279,
+      0.98374157005141,
+      1.1322728719735105,
+      1.3032303357274435,
+      1.5
+    ],
+    "guards": {
+      "relative_symmetry": 1e-12,
+      "cond2_max": 10000000000.0,
+      "cholesky_backward": 1e-12,
+      "whitening_spectral": 1e-08
+    }
+  },
+  "solver": {
+    "kkt_tolerance": 1e-06,
+    "max_iterations": 80,
+    "forward_tolerance": 1e-11
+  },
+  "alpha": {
+    "policy": "fixed_common_grid",
+    "exponents": [
+      -8.0,
+      -7.5,
+      -7.0,
+      -6.5,
+      -6.0,
+      -5.5,
+      -5.0,
+      -4.5,
+      -4.0,
+      -3.5,
+      -3.0,
+      -2.5,
+      -2.0,
+      -1.5,
+      -1.0,
+      -0.5,
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      3.5,
+      4.0
+    ],
+    "tie_atol": 1e-12,
+    "tie_rtol": 1e-10
+  },
+  "conditions": [
+    {
+      "sources": [
+        "PG10",
+        "SB150",
+        "EC04",
+        "EC06",
+        "NEW-J2",
+        "NEW-S2"
+      ],
+      "replicates": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "main"
+    },
+    {
+      "sources": [
+        "PG10",
+        "SB150",
+        "EC04",
+        "EC06",
+        "NEW-J2",
+        "NEW-S2"
+      ],
+      "replicates": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "Gxt",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "mismatch_Gxt"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "weight": "W01",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "weight_W01"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "weight": "W02",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "weight_W02"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "weight": "Woracle",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "weight_Woracle"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "onlyKrAZ",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "availability_onlyKrAZ"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "withoutKrAZ",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "availability_withoutKrAZ"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "random2",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "mask_random2"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "block2",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "mask_block2"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W02",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "iid_high",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "noise_iid_high"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W02",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "iid_low",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "noise_iid_low"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W03",
+      "penalties": [
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.08333333333333333,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "tau_5"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W03",
+      "penalties": [
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 1.0,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "tau_60"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.0,
+      "inverse_gamma": 0.0,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "linear_matched"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.0,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "linear_mismatch"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "Gt",
+      "truth_grid": "Gxt",
+      "nodes": 145,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "basis_145"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "Gt",
+      "truth_grid": "Gxt",
+      "nodes": 289,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "basis_289"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "Gt",
+      "truth_grid": "Gxt",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "grid_time"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "Gx",
+      "truth_grid": "Gxt",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "id": "grid_space"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 0.0,
+      "fit_regime": "dense",
+      "id": "dense"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": 1.0,
+      "id": "relocation_downwind"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "snapshot",
+      "relocation_km": -1.0,
+      "id": "relocation_upwind"
+    },
+    {
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1,
+        2
+      ],
+      "weight": "W03",
+      "penalties": [
+        "L2",
+        "H1"
+      ],
+      "grid": "G0",
+      "truth_grid": "G0",
+      "nodes": 73,
+      "noise": "corr",
+      "tau_hours": 0.25,
+      "truth_gamma": 0.013888888888888888,
+      "inverse_gamma": 0.013888888888888888,
+      "availability": "full",
+      "mask": "none",
+      "temporal_H": "average20",
+      "relocation_km": 0.0,
+      "id": "temporal_average"
+    }
+  ],
+  "single_fits": [
+    {
+      "id": "fixed_alpha_145_L2",
+      "condition": "basis_145",
+      "penalty": "L2",
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1
+      ],
+      "baseline_condition": "grid_time",
+      "kind": "fixed_alpha"
+    },
+    {
+      "id": "fixed_alpha_145_H1",
+      "condition": "basis_145",
+      "penalty": "H1",
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1
+      ],
+      "baseline_condition": "grid_time",
+      "kind": "fixed_alpha"
+    },
+    {
+      "id": "fixed_alpha_289_L2",
+      "condition": "basis_289",
+      "penalty": "L2",
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1
+      ],
+      "baseline_condition": "grid_time",
+      "kind": "fixed_alpha"
+    },
+    {
+      "id": "fixed_alpha_289_H1",
+      "condition": "basis_289",
+      "penalty": "H1",
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1
+      ],
+      "baseline_condition": "grid_time",
+      "kind": "fixed_alpha"
+    },
+    {
+      "id": "zero_start_L2",
+      "condition": "main",
+      "penalty": "L2",
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1
+      ],
+      "baseline_condition": "main",
+      "kind": "zero_start"
+    },
+    {
+      "id": "zero_start_H1",
+      "condition": "main",
+      "penalty": "H1",
+      "sources": [
+        "PG10",
+        "EC04"
+      ],
+      "replicates": [
+        1
+      ],
+      "baseline_condition": "main",
+      "kind": "zero_start"
+    }
+  ],
+  "analysis_contrasts": [
+    {
+      "id": "generator_grid",
+      "baseline": "main",
+      "variant": "mismatch_Gxt",
+      "factor": "generator PDE grid at fixed inverse G0"
+    },
+    {
+      "id": "weight_W01",
+      "baseline": "main",
+      "variant": "weight_W01",
+      "factor": "weight_W01"
+    },
+    {
+      "id": "weight_W02",
+      "baseline": "main",
+      "variant": "weight_W02",
+      "factor": "weight_W02"
+    },
+    {
+      "id": "weight_Woracle",
+      "baseline": "main",
+      "variant": "weight_Woracle",
+      "factor": "weight_Woracle"
+    },
+    {
+      "id": "availability_onlyKrAZ",
+      "baseline": "main",
+      "variant": "availability_onlyKrAZ",
+      "factor": "availability_onlyKrAZ"
+    },
+    {
+      "id": "availability_withoutKrAZ",
+      "baseline": "main",
+      "variant": "availability_withoutKrAZ",
+      "factor": "availability_withoutKrAZ"
+    },
+    {
+      "id": "mask_random2",
+      "baseline": "main",
+      "variant": "mask_random2",
+      "factor": "mask_random2"
+    },
+    {
+      "id": "mask_block2",
+      "baseline": "main",
+      "variant": "mask_block2",
+      "factor": "mask_block2"
+    },
+    {
+      "id": "noise_iid_high",
+      "baseline": "weight_W02",
+      "variant": "noise_iid_high",
+      "factor": "error correlation at equal station variances and W02"
+    },
+    {
+      "id": "noise_iid_low",
+      "baseline": "noise_iid_high",
+      "variant": "noise_iid_low",
+      "factor": "noise scale at fixed independence and W02"
+    },
+    {
+      "id": "tau_5",
+      "baseline": "main",
+      "variant": "tau_5",
+      "factor": "tau_5"
+    },
+    {
+      "id": "tau_60",
+      "baseline": "main",
+      "variant": "tau_60",
+      "factor": "tau_60"
+    },
+    {
+      "id": "linear_matched",
+      "baseline": "linear_mismatch",
+      "variant": "linear_matched",
+      "factor": "truth reaction at fixed linear estimator"
+    },
+    {
+      "id": "linear_mismatch",
+      "baseline": "main",
+      "variant": "linear_mismatch",
+      "factor": "linear_mismatch"
+    },
+    {
+      "id": "basis_145",
+      "baseline": "grid_time",
+      "variant": "basis_145",
+      "factor": "basis dimension at fixed inverse Gt and generator Gxt"
+    },
+    {
+      "id": "basis_289",
+      "baseline": "grid_time",
+      "variant": "basis_289",
+      "factor": "basis dimension at fixed inverse Gt and generator Gxt"
+    },
+    {
+      "id": "grid_time",
+      "baseline": "mismatch_Gxt",
+      "variant": "grid_time",
+      "factor": "inverse PDE grid at fixed generator Gxt"
+    },
+    {
+      "id": "grid_space",
+      "baseline": "mismatch_Gxt",
+      "variant": "grid_space",
+      "factor": "inverse PDE grid at fixed generator Gxt"
+    },
+    {
+      "id": "dense",
+      "baseline": "main",
+      "variant": "dense",
+      "factor": "dense"
+    },
+    {
+      "id": "relocation_downwind",
+      "baseline": "main",
+      "variant": "relocation_downwind",
+      "factor": "relocation_downwind"
+    },
+    {
+      "id": "relocation_upwind",
+      "baseline": "main",
+      "variant": "relocation_upwind",
+      "factor": "relocation_upwind"
+    },
+    {
+      "id": "temporal_average",
+      "baseline": "main",
+      "variant": "temporal_average",
+      "factor": "temporal_average"
+    }
+  ],
+  "planned_counts": {
+    "paths": 360,
+    "single_fits": 12,
+    "nominal_candidates": 9012,
+    "maximum_candidates": 9012
+  },
+  "protected_roots": [
+    "../../.."
+  ]
+}

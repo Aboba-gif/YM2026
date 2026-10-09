@@ -1,0 +1,8 @@
+# Версии зависимостей для Windows, Python 3.12.14.
+numpy==2.5.3
+scipy==1.18.1
+pandas==3.0.6
+scikit-learn==1.9.1
+matplotlib==3.11.2
+threadpoolctl==3.7.0
+pytest==9.1.1

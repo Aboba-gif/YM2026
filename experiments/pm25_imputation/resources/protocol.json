@@ -1,0 +1,56 @@
+{
+  "protocol_id": "final-pm25-export-v1",
+  "issue": 55,
+  "seed": 20260907,
+  "status": "exploratory; specified before this export validation; historical periods already examined",
+  "station_order": ["Severny", "Peschanka", "Soloncy", "KrAZ"],
+  "period": ["2019-01-01", "2023-01-01"],
+  "frequency": "20min",
+  "train_end": "2021-01-01",
+  "splits": {"selection": ["2021-01-01", "2022-01-01"], "test": ["2022-01-01", "2023-01-01"]},
+  "bank": {
+    "internal_lengths": [1, 3, 12, 36, 72, 216, 720],
+    "boundary_lengths": [216, 720],
+    "requested": {"selection": 16, "test": 24},
+    "boundary_requested": {"selection": 8, "test": 12},
+    "margin": 36,
+    "neighbor_regimes": ["actual", "none"],
+    "eligibility": "original finite target block and two endpoints; no concentration threshold",
+    "sampling": "separate nonoverlapping candidate windows per length and geometry, stride=max(288,length+72), season-stratified seeded round robin; overlap between lengths/geometry allowed and reported",
+    "boundary_concealment": "leading masks all target context before hidden block; trailing masks all target context after block; neighbor channels remain original unless none arm"
+  },
+  "models": {
+    "hgb": {"max_leaf_nodes": 7, "max_iter": 100, "learning_rate": 0.06, "l2_regularization": 2.0, "min_samples_leaf": 40, "early_stopping": false, "random_state": 20260907},
+    "common_window_steps": 288,
+    "common_stride": 144,
+    "common_lengths": [1, 3, 12, 36, 72, 216],
+    "common_max_windows": 300,
+    "network_inputs": "only raw other-station pm25 and availability plus calendar; target and own meteorology excluded",
+    "common_inputs": "existing common_features on target-permuted original four channels with whole target gap concealed",
+    "augmentation": "actual and all-neighbors-missing copies; only original observed targets"
+  },
+  "selection": {
+    "internal_candidates": ["linear", "common_hgb", "network_hgb", "climatology"],
+    "fallback_candidates": ["network_hgb", "climatology"],
+    "criterion": "pooled raw squared error per station/length/regime on selection only; ties follow listed order",
+    "minimum_blocks": 8,
+    "length_assignment": "smallest evaluated internal length >= natural run length, at most720",
+    "fallback": "choose per station/regime by pooled selection error on leading/trailing720; if unavailable use pooled internal720; if fewer8 blocks use climatology",
+    "no_test_selection": true,
+    "deploy_refit": "after frozen evaluation, fit same fixed models on all original observed2019-2022; no imputed labels or neighbors"
+  },
+  "smoothing": {
+    "lambda": 1.0,
+    "sensitivity_lambdas": [0.0, 1.0, 9.0, 81.0],
+    "weights": {"observed": 1.0, "artificial_mask_evaluated": 0.25, "extrapolation": 0.05},
+    "interpretation": "fixed design parameters; sensitivity reported; not estimated noise variance or optimal physical denoising"
+  },
+  "interpretation": {
+    "clock": "unchanged naive raw clock; timezone unknown",
+    "units": "raw numeric export units; provisionally common ug/m3, unconfirmed",
+    "intervals": "none: no calibrated natural-gap prediction interval",
+    "support": "artificial_mask_evaluated denotes test design coverage only, not natural-gap accuracy",
+    "leading": "before first original target observation; installation date not inferred",
+    "adr": "use original observations and mask; filled/smoothed values do not add independent information"
+  }
+}

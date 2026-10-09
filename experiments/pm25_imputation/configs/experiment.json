@@ -1,0 +1,10 @@
+{
+  "experiment": "imputation",
+  "data_root": "../../../data/pm25/raw",
+  "output": "../../../../YM2026-results/pm25_imputation/data",
+  "metrics": "../../../../YM2026-results/pm25_imputation/metrics",
+  "protected_roots": [
+    "../../.."
+  ],
+  "protocol": "../resources/protocol.json"
+}

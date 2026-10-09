@@ -1,0 +1,61 @@
+{
+  "study": "review_completion_20260923",
+  "protocol": "protocol.json",
+  "protocol_sha256": "b0ea2697407f905ea78334d4d1d10d74c0b0ed205845451974bc4d09830e5078",
+  "output": "../../../../YM2026-results/source_comparison",
+  "sources": [
+    "SF01-PG10",
+    "SF01-SB150",
+    "SF03-EC04",
+    "SF03-EC06"
+  ],
+  "weights": [
+    "W01",
+    "W02",
+    "W03"
+  ],
+  "noise": "exp_high",
+  "replicates": [
+    0,
+    1,
+    2
+  ],
+  "alpha_exponents": [
+    -6,
+    -5.5,
+    -5,
+    -4.5,
+    -4,
+    -3.5,
+    -3,
+    -2.5,
+    -2,
+    -1.5,
+    -1,
+    -0.5,
+    0,
+    0.5,
+    1,
+    1.5,
+    2
+  ],
+  "bounds_km": [
+    -8,
+    6,
+    -6,
+    6
+  ],
+  "inverse_spacing_km": 0.25,
+  "inverse_steps": 336,
+  "truth_spacing_km": 0.125,
+  "truth_steps": 672,
+  "check_spacing_km": 0.0625,
+  "check_steps": 1344,
+  "workers": 3,
+  "kkt_tolerance": 1e-06,
+  "max_iterations": 80,
+  "experiment": "sources",
+  "protected_roots": [
+    "../../.."
+  ]
+}
