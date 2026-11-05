@@ -3,7 +3,7 @@
 Научные эксперименты по восстановлению источника q(t), влиянию наблюдений и
 ковариационных весов, заполнению пропусков PM₂.₅ и сопоставлению модельных
 откликов с эпизодами КрАЗ. Общие численные компоненты поставляются отдельной
-[библиотекой adrkit-timeseries](https://github.com/Aboba-gif/adrkit-timeseries/blob/3b39759f0ec7b483fe295bfe313747aae050dd92/README.md).
+[библиотекой adrkit-timeseries](https://github.com/Aboba-gif/adrkit-timeseries/blob/dee4037fc92d88a559c1095779847e50b9cc1056/README.md).
 
 ## Установка
 
@@ -12,7 +12,7 @@
 
 ```powershell
 python -m venv .venv
-& .venv/Scripts/python.exe -m pip install -c constraints-tested.txt -r requirements.txt "adrkit-timeseries @ git+https://github.com/Aboba-gif/adrkit-timeseries.git@3b39759f0ec7b483fe295bfe313747aae050dd92" "pytest>=8"
+& .venv/Scripts/python.exe -m pip install -c constraints-tested.txt -r requirements.txt "adrkit-timeseries @ git+https://github.com/Aboba-gif/adrkit-timeseries.git@dee4037fc92d88a559c1095779847e50b9cc1056" "pytest>=8"
 . .venv/Scripts/Activate.ps1
 ```
 
@@ -24,6 +24,10 @@ python -m venv .venv
 `"../adrkit-timeseries"`.
 `constraints-tested.txt` задаёт версии зависимостей для Python 3.12.14 в Windows.
 Команды ниже используют `python` из выбранного окружения.
+
+Контрольные суммы научных протоколов относятся к исходным байтам JSON.
+Правило `experiments/**/*.json text eol=lf` в `.gitattributes` сохраняет эти байты при
+получении репозитория в Windows и Unix.
 
 ## Организация проекта
 
